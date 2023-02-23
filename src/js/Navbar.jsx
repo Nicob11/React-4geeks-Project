@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <nav className="navbar navbar-dark navbar-expand-sm bg-dark">
-      <div className="container-fluid">
+      <div className="container">
         <a className="navbar-brand" href="#">
           Bootstrap Start
         </a>
@@ -18,7 +18,7 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
