@@ -10,9 +10,9 @@ const Cards = (props) => {
           <p className="card-text">
             {props.body}
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <button className="btn btn-primary" onClick={() => props.handleDeleteCard(props)}>
+            Delete Card
+          </button>
         </div>
       </div>
       </div>
