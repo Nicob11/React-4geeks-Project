@@ -1,11 +1,5 @@
 import React,{useState} from "react";
 
-
-
-function test(){
-  
-}
-
 const Jumbotron = (props) => {
   const [newImg, newSetImg]= useState("")
   const [newTittle, newSetTittle]= useState("")
@@ -31,29 +25,21 @@ const Jumbotron = (props) => {
       <h1 className="text-center"> Create new card </h1>
       <form>
 
-        <label for="inputImg" className="form-label">Imagen (URL) :</label>
+        <label htmlFor="inputImg" className="form-label">Imagen (URL) :</label>
         <input name="image" value={newImg} onChange={e => newSetImg(e.target.value)}  type="text" className="form-control mb-3" id="inputImg" aria-describedby="emailHelp"/>
 
-        <label for="inputTittle" className="form-label">Titulo :</label>
+        <label htmlFor="inputTittle" className="form-label">Titulo :</label>
         <input name="tittle" value={newTittle} onChange={e => newSetTittle(e.target.value)}  type="text" className="form-control mb-3" id="inputTittle" aria-describedby="emailHelp"/>
 
 
-        <label for="inputBody" class="form-label">Descripcion :</label>
-        <textarea name="body" type="email" onChange={e => newSetBody(e.target.value)} class="form-control mb-3" id="inputBody" aria-describedby="emailHelp" rows="5">{newBody}</textarea>
+        <label htmlFor="inputBody" className="form-label">Descripcion :</label>
+        <textarea name="body" value={newBody} type="email" onChange={e => newSetBody(e.target.value)} className="form-control mb-3" id="inputBody" aria-describedby="emailHelp" rows="5"></textarea>
 
       </form>
-
-    
-      
-      {/*
-      
-      
-      */} 
       
       <button className="btn btn-primary btn-lg" type="button" onClick={handleNewCard}>Añadir carta</button>
 
     </div>
-  </div>
-    )
+  </div>)
 }
 export default Jumbotron;
