@@ -1,8 +1,10 @@
 import React from "react";
 
 const Cards = (props) => {
+  const handleDeleteCard = () => props.onDeleteCard(props.id)
+
   return (
-    <div className="cardContainer col-md-3 col-12">
+    <div id={props.id} className="cardContainer col-md-3 col-12">
       <div className="card m-1">
         <img src={props.src} className="card-img-top" alt="..." />
         <div className="card-body">
@@ -10,9 +12,9 @@ const Cards = (props) => {
           <p className="card-text">
             {props.body}
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <button className="btn btn-primary" onClick={handleDeleteCard}>
+            Delete this!
+          </button>
         </div>
       </div>
       </div>

@@ -1,11 +1,57 @@
-import React from "react";
+import React,{useState} from "react";
 
-const Jumbotron = () => {
-    return (<div className="p-5 mb-4 bg-light rounded-3">
-    <div className="container-fluid py-5">
-      <h1 className="display-5 fw-bold">Custom jumbotron</h1>
-      <p className="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-      <button className="btn btn-primary btn-lg" type="button">Example button</button>
+
+
+function test(){
+  
+}
+
+const Jumbotron = (props) => {
+  const [newImg, newSetImg]= useState("")
+  const [newTittle, newSetTittle]= useState("")
+  const [newBody, newSetBody] = useState("")
+
+  const handleNewCard = ()=> {
+    let newCard = {
+      img: newImg,
+      title: newTittle,
+      body: newBody,
+      id:  props.countId
+    }
+
+    let newArray = [...props.cartasTemp]
+    newArray.push(newCard)
+    props.setCartasTemp(newArray)
+  
+  }
+  
+
+    return (<div className="p-5 my-4 bg-light rounded-3">
+    <div className="container-fluid">
+      <h1 className="text-center"> Create new card </h1>
+      <form>
+
+        <label for="inputImg" className="form-label">Imagen (URL) :</label>
+        <input name="image" value={newImg} onChange={e => newSetImg(e.target.value)}  type="text" className="form-control mb-3" id="inputImg" aria-describedby="emailHelp"/>
+
+        <label for="inputTittle" className="form-label">Titulo :</label>
+        <input name="tittle" value={newTittle} onChange={e => newSetTittle(e.target.value)}  type="text" className="form-control mb-3" id="inputTittle" aria-describedby="emailHelp"/>
+
+
+        <label for="inputBody" class="form-label">Descripcion :</label>
+        <textarea name="body" type="email" onChange={e => newSetBody(e.target.value)} class="form-control mb-3" id="inputBody" aria-describedby="emailHelp" rows="5">{newBody}</textarea>
+
+      </form>
+
+    
+      
+      {/*
+      
+      
+      */} 
+      
+      <button className="btn btn-primary btn-lg" type="button" onClick={handleNewCard}>Añadir carta</button>
+
     </div>
   </div>
     )
